@@ -200,14 +200,22 @@ form svg {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: calc(100vh - 80px);
+    height: 100vh;
+}
+/* Extra small */
+@media (max-width: 768px) {
+@media (orientation: landscape) {
+    .landing-Sec {
+      height: calc(150vh);
+    }
+  }
 }
 
 .land-talk {
   width: 40%;
   position: absolute;
   top: 40%;
-  transform: translate(14%, -14%);
+  transform: translate(14%, -22%);
 }
 .land-head h1 {
   color: var(--second-color);
