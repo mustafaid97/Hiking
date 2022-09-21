@@ -1,63 +1,36 @@
-
-
-    const burger = document.querySelector(".burger");
-    const nav = document.querySelector(".nav-links");
-    const navLinks = document.querySelectorAll(".nav-links li");
-    const Sbox = document.querySelector(".search-box");
+const burger = document.querySelector(".burger");
+const nav = document.querySelector(".nav-links");
+const navLinks = document.querySelectorAll(".nav-links li");
+const searchBox = document.querySelector(".search-box");
 
 const navSlide = () => {
 
-    burger.addEventListener("click", () => {
-        // Toggle Nav
+    document.addEventListener("click", (e) => {
+        if (e.target === burger || e.target === burger.lastElementChild || e.target === burger.firstElementChild || e.target === burger.firstElementChild.nextElementSibling) {
+
         nav.classList.toggle("nav-active");
 
-            // Animate Links
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = '';
-            }else {
-                link.style.animation = `navLinkFade 0.5s ease ${index / 7 + 0.3}s`;
-            }
-        });
-        // Burger Animation
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                }else {
+                    link.style.animation = `navLinkFade 0.5s ease ${index / 7 + 0.3}s`;
+                }
+            });
         burger.classList.toggle('toggle');
-
-    });
-
-    document.addEventListener("click", (e) => {
-
-    if (e.target !== burger && e.target !== Sbox) {
-
-        if (nav.classList.contains("nav-active")) {
-
-            burger.classList.toggle("toggle");
-
-            nav.classList.toggle("nav-active");
         }
-    }
 
+        if (e.target !== burger && e.target !== searchBox && e.target !== burger.lastElementChild && e.target !== burger.firstElementChild && e.target !== burger.firstElementChild.nextElementSibling) {
 
-});
-
+            if (nav.classList.contains("nav-active")) {
+                burger.classList.toggle("toggle");
+                nav.classList.toggle("nav-active");
+            }
+        }
+    });
 }
 
 navSlide();
-
-// Click Anywhere Outside Menu And Toggle Button
-// document.addEventListener("click", (e) => {
-
-//     if (e.target !== burger && e.target !== nav) {
-
-//         if (nav.classList.contains("nav-active")) {
-
-//             burger.classList.toggle("toggle")
-
-//             (nav.classList.toggle("nav-active"))
-//         }
-//     }
-
-
-// });
 
 // stop Propagation On Menu
 navLinks.onclick = function (e) {
