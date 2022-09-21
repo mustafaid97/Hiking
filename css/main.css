@@ -49,6 +49,9 @@ nav {
   min-height: 10vh;
   padding: 25px 0;
 }
+nav div:first-child {
+  z-index: 5;
+}
 
 nav .logo {
   width: 85px;
@@ -60,7 +63,7 @@ nav .logo {
   }
 
   nav .logo {
-    width: 75px;
+    width: 60px;
   }
 }
 
@@ -192,7 +195,7 @@ form svg {
   position: absolute;
   width: 100%;
   max-height: 50px;
-  top: -24px;
+  top: -35px;
 }
 .landing-Sec {
   position: relative;
