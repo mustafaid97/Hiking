@@ -118,7 +118,7 @@ nav .logo {
     position: absolute;
     right: 0px;
     height: 92vh;
-    top: 15vh;
+    top: 13vh;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -551,6 +551,7 @@ form svg {
     justify-content: center;
   }
     .explore .explore-p {
+      padding: 0;
       transform: translateX(0px);
       text-align: center;
     }
