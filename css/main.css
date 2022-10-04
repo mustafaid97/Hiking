@@ -143,8 +143,15 @@ nav .logo {
 }
 
 .nav-active {
-  transform: translateX(0);
+  transform: translateY(0);
 }
+    @media screen and (max-width:768px) {
+      @media (orientation: landscape) {
+        .nav-active {
+            transform: translateY(73px);
+          }
+        }
+    }
 
 @keyframes navLinkFade {
   from {
