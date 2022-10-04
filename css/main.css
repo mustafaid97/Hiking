@@ -550,6 +550,11 @@ form svg {
   .explore {
     justify-content: center;
   }
+      @media (orientation: landscape) {
+      .explore {
+        height: 110vh;
+      }
+    }
     .explore .explore-p {
       padding: 0;
       transform: translateX(0px);
